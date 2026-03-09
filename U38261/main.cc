@@ -6,27 +6,6 @@ using namespace std;
 #include "prune.hh"
 using namespace pro2;
 
-
-
-/**
- * @brief Poda les branques amb valor `x` d'un arbre binari 
- *        sense repeticions de valors.
- *
- * Retorna un nou arbre binari que és una còpia de `t`
- * però sense les branques que contenen el valor `x`.
- * Alhora retorna si la poda ha tingut èxit o no s'ha podat res.
- * 
- * @param t Arbre binari amb tots els valors diferents.
- * @param x Valor de les branques a podar.
- *
- * @pre `t` és un arbre binari a on tots els nodes tenen _valors diferents_.
- *
- * @return Retorna una parella (`std::pair`) amb l'arbre podat 
- *         i un booleà que és `true` si s'ha podat alguna branca 
- *         i `false` si l'arbre resultat és igual que `t`.
- */
-std::pair<pro2::BinTree<int>, bool> prune_tree(pro2::BinTree<int> t, int x);  
-
 int read_int_oneline(string line) {
     istringstream iss(line);
     int x;
