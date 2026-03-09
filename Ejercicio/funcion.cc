@@ -9,7 +9,18 @@ using namespace std;
 using namespace pro2;
 
 pair<BinTree<int>, int> sort_tree_pair (BinTree<int> t) {
-    
+    if (t.empty()) {
+        return {t, 0};
+    } else {
+        // HI1: l.firset -> al hijo izq ordenado, l.second -> suma del hijo izq
+        // Lo mismo con el derecho
+        auto l = sort_tree_pair(t.left());
+        auto r = sort_tree_pair(t.right());
+
+        int suma = t.value() + l.second + r.second;
+        if (l.second <= r.second) return {BinTree<int>(t.value(), l.first, r.first), suma};
+        else return {BinTree<int>(t.value(), r.first, l.first), suma};
+    }
 }
 
 /**
@@ -23,7 +34,6 @@ pair<BinTree<int>, int> sort_tree_pair (BinTree<int> t) {
  * @returns L'arbre de sumes de `t`.
  */
 BinTree<int> sort_tree(BinTree<int> t) {
-    if (t.empty()) {
-        return BinTree<int>();
-    }
+    auto p = sort_tree_pair(t);
+    return p.first;
 }
