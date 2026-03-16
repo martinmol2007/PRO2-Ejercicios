@@ -1,0 +1,48 @@
+<h1 id="paquets-de-xarxa">Paquets de Xarxa</h1>
+<p>Escriu un programa que simuli un rúter de xarxa (<em>router</em>). El
+rúter té un <em>buffer</em> intern implementat amb una cua de prioritat
+de capacitat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+Cada paquet de xarxa té tres camps: una prioritat (enter), una adreça IP
+d’origen (string) i una adreça IP de destí (string). Representem un
+paquet amb l’struct següent:</p>
+<pre><code>struct Paquet {
+    int prioritat;
+    string origen, desti;
+};</code></pre>
+<p>Per poder fer servir el <code>pro2::Heap</code> amb l’struct
+<code>Paquet</code>, cal definir l’operador <code>&gt;</code> de la
+manera següent:</p>
+<pre><code>bool operator&gt;(const Paquet&amp; p1, const Paquet&amp; p2) {
+    return p1.prioritat &gt; p2.prioritat;
+}</code></pre>
+<p>El rúter funciona de la manera següent: mentre la cua de prioritat té
+menys de
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+elements, simplement afegeix els paquets entrants a la cua. Quan la cua
+està plena (té
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+elements), abans d’afegir el nou paquet, el rúter treu el paquet amb la
+prioritat més alta, l’escriu pel canal de sortida, i després afegeix el
+nou paquet a la cua. Quan ja no hi ha més paquets d’entrada, el rúter
+buida la cua de prioritat escrivint els paquets restants en ordre de
+prioritat (de més alta a més baixa).</p>
+<h2 class="unnumbered" id="entrada">Entrada</h2>
+<p>La primera línia conté un enter
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+(la capacitat del buffer de el rúter). A continuació, una seqüència de
+paquets, un per línia, cadascun amb tres camps: prioritat (enter),
+adreça IP d’origen (string) i adreça IP de destí (string). Les adreces
+IP tenen el format <code>aaa.bbb.ccc.ddd</code>.</p>
+<h2 class="unnumbered" id="sortida">Sortida</h2>
+<p>Cada paquet que el rúter envia es mostra en una línia amb el format:
+prioritat, espai, adreça d’origen, espai, adreça de destí.</p>
+<h2 class="unnumbered" id="observació">Observació</h2>
+<p>Envia <code>program.cc</code> incloent <code>&quot;heap.hh&quot;</code>.
+Descarrega els fitxers públics (icona del gatet).</p>
+<h2 class="unnumbered" id="informació-del-problema">Informació del
+problema</h2>
+<p><span>Autoria:</span> Pau Fernández</p>
+<p><span>Generació:</span> 2026-03-05T21:05:12.185Z</p>
+<p>© <em>Jutge.org</em>, 2006–2026.<br />
+<a href="https://jutge.org">https://jutge.org</a></p>
