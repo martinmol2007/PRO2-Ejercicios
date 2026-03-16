@@ -28,5 +28,5 @@ int main () {
         i++;
         cout << heap.top().valor << endl;
     }
-
+    return 0;
 }
