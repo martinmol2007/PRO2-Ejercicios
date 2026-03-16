@@ -26,7 +26,7 @@ int main () {
             heap.pop();
         }
         i++;
-        cout << heap.top() << " ";
+        cout << heap.top().valor << endl;
     }
 
 }
