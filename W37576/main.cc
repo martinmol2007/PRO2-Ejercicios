@@ -17,15 +17,15 @@ int main () {
     int W;
     cin >> W; // Mida de la ventana
     
-    Heap<Elem> heap;
+    Heap<Elem> heap; // Heap para tenerlos orednados por maximo
     
-    int n, i = 0;
+    int n, i = 0; // i es la posicion de la secuencia
     while (cin >> n) {
-        heap.push({n, i}); // Valor e Index
-        while (heap.top().index <= i - W && not heap.empty()) {
+        heap.push({n, i}); // Valor e Index (Indice es el i)
+        while (heap.top().index <= i - W) { /* Mientras no se cumpla la condicion de la ventana, quitar top*/
             heap.pop();
         }
-        i++;
+        ++i;
         cout << heap.top().valor << endl;
     }
     return 0;
