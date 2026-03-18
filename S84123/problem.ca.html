@@ -1,0 +1,52 @@
+<h1 id="fusió-de-k-llistes-ordenades">Fusió de K Llistes Ordenades</h1>
+<p>Donades
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+llistes d’enters, cadascuna ordenada en ordre descendent, cal
+fusionar-les totes en una sola llista, també en ordre descendent.</p>
+<p>L’estratègia consisteix a fer servir un <em>max-heap</em> que
+emmagatzema parells (valor, índex de llista). Inicialment, s’insereix el
+primer element de cada llista al <em>heap</em> juntament amb l’índex de
+la llista d’on prové. A cada pas, s’extreu el màxim del <em>heap</em>,
+s’afegeix al resultat, i s’insereix el següent element de la mateixa
+llista (si n’hi ha). D’aquesta manera, el <em>heap</em> sempre conté com
+a màxim
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+elements i el procés és eficient.</p>
+<p>Fes una funció amb la capçalera</p>
+<pre><code>/**
+ * @brief Fusiona K llistes ordenades descendentment en una sola
+ * llista ordenada descendentment.
+ *
+ * @param llistes Vector de K llistes, cadascuna ordenada
+ * descendentment.
+ * @pre Cada llista de `llistes` està ordenada en ordre descendent.
+ * @post Retorna una llista amb tots els elements de totes les
+ * llistes, ordenada descendentment.
+ */
+list&lt;int&gt; fusiona_llistes(
+    const vector&lt;list&lt;int&gt;&gt;&amp; llistes
+);</code></pre>
+<h2 class="unnumbered" id="entrada">Entrada</h2>
+<p>La primera línia conté un enter
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+(el nombre de llistes). A continuació hi ha
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+línies, cadascuna amb una llista no buida d’enters en ordre descendent,
+separats per espais.</p>
+<h2 class="unnumbered" id="sortida">Sortida</h2>
+<p>Una sola línia amb tots els enters fusionats en ordre descendent,
+separats per espais.</p>
+<h2 class="unnumbered" id="observació">Observació</h2>
+<p>Als fitxers públics (icona del gatet) trobaràs: <code>main.cc</code>
+(el programa principal, amb l’entrada/sortida feta),
+<code>fusio.cc</code> (a on has d’implementar la funció),
+<code>heap.hh</code>, <code>assert.hh</code> i un
+<code>Makefile</code>.</p>
+<p>Has d’implementar <code>fusiona_llistes</code> al fitxer
+<code>fusio.cc</code> i enviar <strong>només</strong> aquest fitxer.</p>
+<h2 class="unnumbered" id="informació-del-problema">Informació del
+problema</h2>
+<p><span>Autoria:</span> Pau Fernández</p>
+<p><span>Generació:</span> 2026-03-05T11:19:01.755Z</p>
+<p>© <em>Jutge.org</em>, 2006–2026.<br />
+<a href="https://jutge.org">https://jutge.org</a></p>

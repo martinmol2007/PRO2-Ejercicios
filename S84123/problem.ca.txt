@@ -1,0 +1,57 @@
+Fusió de K Llistes Ordenades
+
+Donades K llistes d’enters, cadascuna ordenada en ordre descendent, cal
+fusionar-les totes en una sola llista, també en ordre descendent.
+
+L’estratègia consisteix a fer servir un max-heap que emmagatzema parells
+(valor, índex de llista). Inicialment, s’insereix el primer element de
+cada llista al heap juntament amb l’índex de la llista d’on prové. A
+cada pas, s’extreu el màxim del heap, s’afegeix al resultat, i
+s’insereix el següent element de la mateixa llista (si n’hi ha).
+D’aquesta manera, el heap sempre conté com a màxim K elements i el
+procés és eficient.
+
+Fes una funció amb la capçalera
+
+    /**
+     * @brief Fusiona K llistes ordenades descendentment en una sola
+     * llista ordenada descendentment.
+     *
+     * @param llistes Vector de K llistes, cadascuna ordenada
+     * descendentment.
+     * @pre Cada llista de `llistes` està ordenada en ordre descendent.
+     * @post Retorna una llista amb tots els elements de totes les
+     * llistes, ordenada descendentment.
+     */
+    list<int> fusiona_llistes(
+        const vector<list<int>>& llistes
+    );
+
+Entrada
+
+La primera línia conté un enter K (el nombre de llistes). A continuació
+hi ha K línies, cadascuna amb una llista no buida d’enters en ordre
+descendent, separats per espais.
+
+Sortida
+
+Una sola línia amb tots els enters fusionats en ordre descendent,
+separats per espais.
+
+Observació
+
+Als fitxers públics (icona del gatet) trobaràs: main.cc (el programa
+principal, amb l’entrada/sortida feta), fusio.cc (a on has d’implementar
+la funció), heap.hh, assert.hh i un Makefile.
+
+Has d’implementar fusiona_llistes al fitxer fusio.cc i enviar només
+aquest fitxer.
+
+Informació del problema
+
+Autoria: Pau Fernández
+
+Generació: 2026-03-05T11:19:01.755Z
+
+© Jutge.org, 2006–2026.
+https://jutge.org
