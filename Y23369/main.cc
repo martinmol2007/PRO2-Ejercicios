@@ -17,6 +17,9 @@ int main () {
     for (auto it = mapa.begin(); it != mapa.end(); it++) {
         cout << it->first << " " << it->second << endl;
     }
+<<<<<<< HEAD
 
     return 0;
+=======
+>>>>>>> 638946a (Problemas)
 }
