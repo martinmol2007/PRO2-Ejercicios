@@ -25,9 +25,9 @@ int main () {
     }
 
     for (auto it = mapa.begin(); it != mapa.end(); ++it) {
-        if ((*it).second.size() > 1) {
-            cout << it->first.first << " " << it->first.second << ":";
-            imprimir(it->second);
+        if (it->second.size() > 1) {
+            cout << it->first.first << " " << it->first.second << ":"; // Saca el año y la ciudad
+            imprimir(it->second); // Saca los turistas
         }
     }
     return 0;
