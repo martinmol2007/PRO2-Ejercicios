@@ -3,4 +3,4 @@ save:
 	git commit -m "Problemas"
 	git push
 	clear
-	cout << "Todo listo y subido a GitHub!" << endl;
+	Todo listo y subido a GitHub!
