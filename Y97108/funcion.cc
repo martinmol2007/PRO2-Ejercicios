@@ -20,7 +20,10 @@ BinTree<int> sum_aux (BinTree<int> t, int altura, int& suma) {
     BinTree<int> d = sum_aux(t.right(), altura+1, sumad);
     // HI: d es el arbol reemplzao del hijo derecho de t // sumd es la suma de elemenots del hijo der
     suma = t.value() + sumai + sumad;
-    
+
+    if (altura % 2 == 0) return BinTree<int> (suma, l, d);
+    else return BinTree<int> (t.value(), l, d);
+
 }
 
 /**
