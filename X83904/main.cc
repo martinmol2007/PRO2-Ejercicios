@@ -19,7 +19,7 @@ int main () {
     int k;
     cin >> k;
 
-    vector<set<string>> act (k);
+    vector< set<string> > act (k);
     for (int i = 0; i < k; i++) {
         string jugadores;
         while (cin >> jugadores && jugadores != ".") {
@@ -27,6 +27,30 @@ int main () {
         }
     }
 
-    
+    vector<string> todos;
+    vector<string> cap;
+
+    for (int i = 0; i < v.size(); i++) {
+        string nombre = v[i];
+        int cont = 0;
+        for (int j = 0; j < act.size(); j++) {
+            auto it = act[i].find(nombre);
+            if (it != act[i].end()) cont++;
+        }
+        if (cont == k) todos.push_back(nombre);
+        if (cont == 0) cap.push_back(nombre);
+    }
+
+    cout << "Totes les activitats:";
+    for (int i = 0; i < todos.size(); i++) {
+        cout << " " << todos[i];
+    }
+    cout << endl;
+
+    cout << "Cap activitat:";
+    for (int i = 0; i < cap.size(); i++) {
+        cout << " " << cap[i];
+    }
+    cout << endl;
 
 }
