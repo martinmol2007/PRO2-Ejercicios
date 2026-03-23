@@ -3,4 +3,4 @@ save:
 	git commit -m "Problemas"
 	git push
 	clear
-	Todo listo y subido a GitHub!
+	\nTodo listo y subido a GitHub!
