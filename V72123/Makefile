@@ -8,8 +8,9 @@ save:
 	git add .
 	git commit -m "Problemas"
 	git push
+	clear
 	cowsay Guardado
-	
+
 clean:
 	rm -f program
 
