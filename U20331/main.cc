@@ -5,13 +5,7 @@
 
 using namespace std;
 
-void imprimir (const set<string>& s) {
-    for (auto it2 = s.begin(); it2 != s.end(); it2++) {
-        cout << " " << (*it2);
-    }
-    cout << endl;
-    return;
-}
+void imprimir (const set<string>& s);
 
 int main () {
     string nombre;
@@ -31,4 +25,5 @@ int main () {
         }
     }
     return 0;
+    
 }
