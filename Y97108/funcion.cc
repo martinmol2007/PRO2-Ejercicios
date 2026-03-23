@@ -41,3 +41,4 @@ BinTree<int> sum_below_at_even_depth(BinTree<int> t) {
     int suma = 0;
     return sum_aux(t, 0, suma);
 }
+
