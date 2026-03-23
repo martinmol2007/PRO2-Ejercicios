@@ -5,10 +5,12 @@
 
 using namespace std;
 
+
 int main () {
     string nombres;
     vector<string> v;
 
+    set<pair<string, vector<string>>> jugadores;
 
     // Lee las personas
     while (cin >> nombres && nombres != ".") {
@@ -19,7 +21,7 @@ int main () {
     int k;
     cin >> k;
 
-    vector< set<string> > act (k);
+    vector< set<string> > act(k);
     for (int i = 0; i < k; i++) {
         string jugadores;
         while (cin >> jugadores && jugadores != ".") {
@@ -34,8 +36,8 @@ int main () {
         string nombre = v[i];
         int cont = 0;
         for (int j = 0; j < act.size(); j++) {
-            auto it = act[i].find(nombre);
-            if (it != act[i].end()) cont++;
+            auto it = act[j].find(nombre);
+            if (it != act[j].end()) cont++;
         }
         if (cont == k) todos.push_back(nombre);
         if (cont == 0) cap.push_back(nombre);
