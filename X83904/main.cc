@@ -54,5 +54,6 @@ int main () {
         cout << " " << cap[i];
     }
     cout << endl;
-
+    
+    return 0;
 }
