@@ -22,7 +22,7 @@ bool aux (BinTree<int> t, int val, bool primero) {
 
 /**
  * @brief Determina si tots els nodes interns d'un arbre binari tenen el mateix valor
- *
+ * A
  * Un node intern és un node que no és una fulla (té almenys un fill).
  *
  * @param t L'arbre binari d'enters.
