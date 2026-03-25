@@ -1,5 +1,3 @@
-.PHONY: pull save
-
 pull:
 	@echo "Haciendo pull..."
 	@git pull
@@ -13,3 +11,5 @@ save:
 	@git push
 	@clear
 	@echo "Todo listo y subido a GitHub!"
+
+.PHONY: pull save
