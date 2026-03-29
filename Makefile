@@ -1,7 +1,7 @@
 save:
 	@echo "Subiendo cambios..."
 	@git add .
-	@git commit -m "Problemas" || true
+	@git commit -m "Cambios" || true
 	@git push
 	@clear
 	@echo "Todo listo y subido a GitHub!"
