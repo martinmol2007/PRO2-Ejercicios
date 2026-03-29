@@ -1,3 +1,18 @@
-Ejercicios de PRO2 FIB 2026 
+# PRO2 - FIB 2026
 
-### Sin acabar
+Ejercicios de programación de la asignatura PRO2 (FIB - UPC).
+
+## Contenido
+
+- Ejercicios del curso Q2 2026
+- Pruebas y tests
+
+## Lenguaje
+
+- C++
+
+## Comandos
+
+```bash
+make save
+make pull
