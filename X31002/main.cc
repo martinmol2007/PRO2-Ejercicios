@@ -25,7 +25,7 @@ string esborra(string w) {
 
     for (int i = 1; i < n; i++) {
         if(not pila.empty()) {
-            if( not es_minuscula(pila.top()) and char(w[i] - 'a' + 'A') == pila.top()) {
+            if(not es_minuscula(pila.top()) and char(w[i] - 'a' + 'A') == pila.top()) {
                 pila.pop();
             } else if (es_minuscula(pila.top()) and char(pila.top() - 'a' + 'A') == w[i]) {
                 pila.pop();
@@ -45,6 +45,7 @@ string esborra(string w) {
 int main () {
     string s;
     stack<char> pila;
+
     while (cin >> s) {
         cout << esborra(s) << endl;
     }
