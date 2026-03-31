@@ -1,0 +1,11 @@
+FED001 2500 Roger Federer
+NAD002 2800 Rafa Nadal
+ALC003 1200 Carlos Alcaraz
+DJO004 2600 Novak Djokovic
+SIN005 1800 Jannik Sinner
+---
+FED001 +443
+NAD002 -256
+ALC003 +1124
+DJO004 +150
+SIN005 +850

@@ -1,55 +1,53 @@
 #include "html_elem.hh"
 #include "vstack.hh"
 #include <iostream>
-#include <stack>
 #include <string>
 #include <vector>
-
 using namespace std;
 
-int main () {
+int main() {
     string s;
-
-    bool es_html = false;
-    bool es_head = false;
-
     vector<string> v;
-    stack<string> pila;
-    while (cin >> s) {
-        if (is_tag(s) && not is_close_tag(s)) {
-            v.push_back(s);
-            pila.push(s);
+    VStack pila;
 
-            if (tag_name(s) == "html") {
-                es_html = true;
-            } else if (tag_name(s) == "head") {
-                es_head = true;
-            }
-        }
-        else if (is_tag(s) && is_close_tag(s)) {
-            if (tag_name(pila.top()) == "html" && tag_name(s) == "html") {
-                v.push_back(s);
-                pila.pop();
-                es_html = false;
-            } else if (tag_name(pila.top()) == "head" && tag_name(s) == "head") {
-                v.push_back(s);
-                pila.pop();
-                es_head = false;
-            } else if (tag_name(pila.top()) == tag_name(s)) {
-                v.push_back(s);
-                pila.pop();
-            }
-        }
-        else if (not is_tag(s)) {
-            if (not pila.empty()) {
-                if (tag_name(pila.top()) == "script" && es_head && es_html) {
-                    v.push_back(s);
-                } else if (tag_name(pila.top()) != "script") {
-                    v.push_back(s);
+    while (cin >> s) {
+        if (is_tag(s)) {
+            if (!is_close_tag(s)) {
+
+                if (tag_name(s) == "script") {
+                    v.push_back(s);  // guardar <script>
+
+                    bool keep = false;
+
+                    // script hijo directo de head, y head hijo directo de html
+                    if (!pila.empty() && pila.top(0) == "<head>" && pila.size() >= 2 && pila.top(-1) == "<html>") {
+                        keep = true;
+                    }
+
+                    while (cin >> s && s != "</script>") {
+                        if (keep) v.push_back(s);
+                    }
+
+                    v.push_back("</script>");
                 }
-            } else {
-                v.push_back(s);
+                else {
+                    v.push_back(s);
+                    pila.push(s);
+                }
             }
+            else {
+                v.push_back(s);
+                pila.pop();
+            }
+        }
+        else {
+            v.push_back(s);
         }
     }
+
+    for (int i = 0; i < int(v.size()); ++i) {
+        cout << v[i] << " ";
+    }
+
+    return 0;
 }
