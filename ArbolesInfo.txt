@@ -2,4 +2,4 @@ En Arboles:
 
 - Si pasas algo abajo (si lo bajas, es decir, va de arriba a abajo), sin referencia
 
-- Si pasas algo arriba (si lo subes, es decir, va de abajo a arriba), por referencia
+- Si pasas algo arriba (si lo subes, es decir, va de abajo a arriba), por referencia primero llamo y luego calculo
