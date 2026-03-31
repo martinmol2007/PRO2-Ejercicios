@@ -12,11 +12,11 @@ void aux (Tree<string> t, int indent_size, int h) {
     for (int j = 0; j < indent_size * h; j++) {
         cout << " ";
     }
-    cout << t.value() << endl;
-    h += 1;
 
+    cout << t.value() << endl;
+  
     for (int i = 0; i < t.num_children(); i++) {
-        aux(t.child(i), indent_size, h);
+        aux(t.child(i), indent_size, h+1);
     }
     
 }
