@@ -12,4 +12,12 @@ pull:
 	@clear
 	@echo "Pull hecho!"
 
-.PHONY: pull save
+readme:
+	@echo "Guardando cambios de README.md"
+	@git add README.md
+	@git commit -m "README"
+	@git push
+	@clear
+	@echo "README Guardado en GitHub"
+
+.PHONY: pull save readme
