@@ -25,4 +25,3 @@ make pull
 >[!IMPORTANT]
 >
 >Si quieres contribuir, lee primero [CONTRIBUTING](CONTRIBUTING.md).
-
