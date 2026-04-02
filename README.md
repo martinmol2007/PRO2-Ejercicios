@@ -24,4 +24,4 @@ make pull
 
 >[!IMPORTANT]
 >
->Si quieres contribuir, lee primero [CONTRIBUTING](CONTRIBUTING.md).
+>Si quieres contribuir, lee primero [CONTRIBUTING.md](CONTRIBUTING.md).
