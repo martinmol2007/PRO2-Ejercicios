@@ -16,3 +16,8 @@ Ejercicios de programación de la asignatura PRO2 (FIB - UPC).
 ```bash
 make save
 make pull
+
+>[!IMPORTANT]
+>
+>Si quieres contribuir, lee primero ```bash CONTRIBUTING.md .
+
