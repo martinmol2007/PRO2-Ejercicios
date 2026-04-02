@@ -12,14 +12,14 @@ Ejercicios de programación de la asignatura PRO2 (FIB - UPC).
 - C++
 
 ## Comandos
-![divider](assets/divisor1.gif)
+![divider](assets/divisor2.gif)
 
 ```bash
 make save
 make pull
 ```
 
-![divider](assets/divisor1.gif)
+![divider](assets/divisor2.gif)
 ---
 
 ## Importante!
