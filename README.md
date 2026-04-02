@@ -24,5 +24,5 @@ make pull
 
 >[!IMPORTANT]
 >
->Si quieres contribuir, lee primero ```bash CONTRIBUTING.md .
+>Si quieres contribuir, lee primero [link text](CONTRIBUTING.md).
 
