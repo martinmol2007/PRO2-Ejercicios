@@ -2,4 +2,4 @@
 
 >[!IMPORTANT]
 >
->Estos ejercicios ya estan en las otras carpetas!.
+>Estos ejercicios ya estan en las otras carpetas!
