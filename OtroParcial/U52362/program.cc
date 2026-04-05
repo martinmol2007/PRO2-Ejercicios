@@ -34,7 +34,7 @@ void escribir_puntos (Heap<Punt> h) {
 
     int n = v.size();
 
-    for (int i = n-1; n >= 0; i--) {
+    for (int i = n-1; i >= 0; i--) {
         cout << "(" << v[i].first << ", " << v[i].second << ")" << endl;
     }
 
