@@ -42,6 +42,6 @@ bool is_correct_html(istream& in) {
         }
     }
     
-    return true;
+    return P.empty();
 }
 
