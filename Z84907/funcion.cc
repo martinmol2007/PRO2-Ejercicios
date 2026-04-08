@@ -19,6 +19,7 @@ bool is_correct_html(istream& in) {
     if (is_close_tag(word)) return false;
     string name = tag_name(word);
     if (name != "html") return false;
+    P.push(name);
     bool cierre_html = false;
 
     // Llegeix cada paraula del canal d'entrada `in` mentre es pugui
