@@ -1,0 +1,10 @@
+En el Jutge ya hay 2 pagins de referencias a las que se puede acceder incluso en el examen:
+
+1r Ir a Documentation
+
+2n Ir a References
+
+3r Links:
+
+- https://jutge.org/doc/cppreference/en/
+- https://jutge.org/doc/cplusplus.com/reference/
