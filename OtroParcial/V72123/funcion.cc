@@ -17,33 +17,36 @@ using namespace std;
  *         repetits.
  */
 list<Person> unio_ordenada(const list<Person>& a, const list<Person>& b) {
-    list<Person> lista;
-    auto it1 = a.begin();
-    auto it2 = b.begin();
+    list<Person> res;
 
-    while (it1 != a.end() && it2 != b.end()) {
-        if ((*it1).is_equal_to(*it2)) {
-            lista.push_back(*it1);
-            it1++;
-            it2++;
-        } else if ((*it1).is_less_than((*it2))) {
-            lista.push_back(*it1);
-            it1++;
-        } else {
-            lista.push_back(*it2);
-            it2++;
+    auto ita = a.begin();
+    auto itb = b.begin();
+
+    while (ita != a.end() && itb != b.end()) {
+        if ((*ita).is_less_than((*itb))) {
+            res.push_back((*ita));
+            ita++;
+        }
+        else if ((*itb).is_less_than((*ita))) {
+            res.push_back((*itb));
+            itb++;
+        } 
+        else {
+            res.push_back((*ita));
+            ita++;
+            itb++;
         }
     }
 
-    while (it1 != a.end()) {
-        lista.push_back(*it1);
-        it1++;
+    while (ita != a.end()) {
+        res.push_back((*ita));
+        ita++;
     }
 
-    while (it2 != b.end()) {
-        lista.push_back(*it2);
-        it2++;
+    while (itb != b.end()) {
+        res.push_back((*itb));
+        itb++;
     }
 
-    return lista;
+    return res;
 }
