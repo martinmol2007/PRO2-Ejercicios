@@ -143,9 +143,10 @@ public:
       Item* temp = ptopitem;
       ptopitem = ptopitem->next;
       delete temp;
+      _size--;
       return;
     }
-    
+
     Item* prev = ptopitem;
     Item* curr = ptopitem->next;
 
@@ -153,11 +154,13 @@ public:
       if (curr->value == value) {
         prev->next = curr->next;
         delete curr;
+        _size--;
         return;
       }
       prev = curr;
       curr = curr->next;
     }
+    
     return;
   }
   
