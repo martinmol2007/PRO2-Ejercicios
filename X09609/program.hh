@@ -16,7 +16,7 @@ static pair<int, node_arbre*> i_cerca_x (node_arbre* n, const T& x, int dist) {
     else {
         pair<int, node_arbre*> i = i_cerca_x(n->segE, x, dist+1);
         pair<int, node_arbre*> d = i_cerca_X(n->segD, x, dist+1);
-
+        
         if(d.first != -1 && d.first < i.first) {
             return d;
         }
