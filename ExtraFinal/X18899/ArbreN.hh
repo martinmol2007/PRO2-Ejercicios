@@ -4,8 +4,7 @@
 #include "utils.PRO2"
 #include <vector>
 
-template <class T> 
-class ArbreNari { 
+template <class T> class ArbreNari { 
   private:     
     struct node_arbreNari {
         T info;
@@ -46,12 +45,7 @@ static void esborra_node_arbreNari(node_arbreNari* m) {
   }
 }
 
-
-//---------
-//Afegeix aquí les funcions privades que consideris
-
-
-public:
+  public:
     // especificaci� operacions p�bliques
 
 ArbreNari(int n) {
@@ -163,40 +157,13 @@ int aritat() const {
 /* Post: el resultat �s l'aritat del p.i. */
     return N;
 }
-private:
-static bool es_complet_rec(node_arbreNari* n, int& h) {
-  // Caso Base
-  if(n == nullptr) {
-    h = 0;
-    return true;
-  }
-  else {
-    int alt_inicial;
-    es_complet_rec(n->seg[0], alt_inicial);
-    // HI: alt_inicial es la altura del hijo 0 de n
 
-    // SE HA DE COMPARAR LA alt_inicial con h del resto de hijos
-    for(int i = 0; i < n->seg.size(); i++) {
-      // h es la altura del hijo i-essimo de p
-      if(not es_complet_rec(n->seg[i], h)) return false; 
-      if(h != alt_inicial) return false;
-    }
+//
+// extension
+//
+#include "program.hh"
 
-    // Actualizamos h para devolverselo a mi padre
-    h = alt_inicial + 1;
-    return true;
-  }
-}
-//Completa la següent funció
-public:
-/* Pre: cert */ 
-/* Post: el resultat indica si l’arbre del p.i és complet */
-bool es_complet() const {
-  int h;
-  return es_complet_rec(primer_node, h);
-}
-
-
+void arbsuma(ArbreNari& asum) const;
 };
 
 #endif
