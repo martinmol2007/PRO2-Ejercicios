@@ -49,8 +49,18 @@ static void esborra_node_arbre(node_arbre* m) {
 
   //Extension---------------------------------------
   //Completa la funció privada:
-  //static node_arbre* i_cons_arbre_cerca(vector<T> &v, int i, int j) {
-  //}
+  static node_arbre* i_cons_arbre_cerca(vector<T> &v, int i, int j) {
+    if(i > j) return nullptr;
+    
+    int medio = (i+j)/2;
+
+    node_arbre* node = new node_arbre;
+    node->info = v[medio];
+    node->segE = i_cons_arbre_cerca(v, i, medio-1);
+    node->segD = i_cons_arbre_cerca(v, medio+1, j);
+
+    return node;
+  }
 
 public:
 
@@ -152,15 +162,14 @@ public:
     /* Post: el resultat indica si el p.i. Es un arbre buit */
     return (primer_node==NULL);
   }
+
   //Extension---------------------------------------
   //Completa la funció pública:
-  //void cons_arbre_cerca(vector<T> &v) {
-  //}
-
- 
+  void cons_arbre_cerca(vector<T> &v) {
+    sort(v.begin(), v.end());
+    int elemenots = v.size()-1;
+    primer_node = i_cons_arbre_cerca(v, 0, elemenots);
+  } 
 };
-
-
-
 
 #endif
