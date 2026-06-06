@@ -179,9 +179,8 @@ private:
 
     // Caso Recursivo
 
-    // HI: suma_esq es el numero de nodos mayor que su padre del hijo izquerdo
+    
     int suma_esq = numIncreasingAux(n->segE);
-    // HI: suma_der es el numero de nodos mayor que su padre del hijo derecho
     int suma_der = numIncreasingAux(n->segD);
 
     if(n->segE != nullptr && n->segE->info > n->info) suma_esq++;
