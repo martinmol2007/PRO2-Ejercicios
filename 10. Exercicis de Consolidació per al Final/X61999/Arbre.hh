@@ -163,7 +163,6 @@ public:
   // Post: Retorna el nombre de parelles de nodes de l'arbre representat pel paràmetre implícit
   // que no son l'arrel i que guarden un valor
   // estríctament major que el valor guardat al seu node pare.
-  // Descomenteu les següents dues linies i implementeu el mètode:
   int numIncreasing() const{
     if(primer_node == nullptr) return 0;
     return numIncreasingAux(primer_node, primer_node->info);
@@ -174,8 +173,7 @@ private:
   // Post: Retorna el nombre de parelles de nodes de l'arbre representat per n
   // que no son l'arrel i que guarden un valor
   // estríctament major que el valor guardat al seu node pare.
-  // Descomenteu les següents dues linies i implementeu el mètode:
-  static int numIncreasingAux(node_arbre *n, int padre){
+  static int numIncreasingAux(node_arbre *n, T padre){
     // Caso Base
     if(n == nullptr) return 0;
     
