@@ -5,7 +5,7 @@ using namespace std;
 #include "program.hh"
 #else
 #if __has_include("Arbre.hh")
-#include "Arbre.hh"
+#include "Arbre2.hh"
 #endif
 #endif
 

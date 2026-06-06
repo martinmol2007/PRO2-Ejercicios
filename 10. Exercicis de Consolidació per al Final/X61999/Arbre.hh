@@ -3,7 +3,8 @@
 
 using namespace std;
 
-template <class T> class Arbre { 
+template <class T> 
+class Arbre { 
 private:     
   struct node_arbre {
     T info;
@@ -168,7 +169,6 @@ public:
     return numIncreasingAux(primer_node, primer_node->info);
   }
 private:
-
   // Pre:
   // Post: Retorna el nombre de parelles de nodes de l'arbre representat per n
   // que no son l'arrel i que guarden un valor
