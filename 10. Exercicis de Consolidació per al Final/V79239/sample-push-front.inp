@@ -1,0 +1,14 @@
+push_front 1
+size
+write_deque
+push_front 2
+push_front 3
+size
+write_deque
+front
+back
+push_front 10
+push_front 20
+size
+write_deque
+end
