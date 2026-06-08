@@ -6,8 +6,8 @@ using namespace std;
 #if __has_include("program.hh")
 #include "program.hh"
 #else
-#if __has_include("list2.hh")
-#include "list2.hh"
+#if __has_include("list.hh")
+#include "list.hh"
 #endif
 #endif
 

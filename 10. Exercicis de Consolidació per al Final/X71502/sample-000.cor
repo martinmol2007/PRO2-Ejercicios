@@ -1,0 +1,45 @@
+a b c d
+e f g h
+4
+4
+d
+h
+a b c d g h
+e f
+6
+2
+h
+f
+a b c
+e f d g h
+3
+5
+c
+h
+a b c h
+e f d g
+4
+4
+h
+g
+a b c h
+e f d g
+4
+4
+h
+g
+a b c h e f d g
+
+8
+0
+g
+
+a b c h e f d g
+0
+8
+g
+a b c h e f d g
+
+8
+0
+g

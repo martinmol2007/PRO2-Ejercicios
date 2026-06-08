@@ -541,11 +541,11 @@ class List {
         if(segundo != &itemsup) {
             primero->next = &(itemsup);
             itemsup.prev = primero;
-            _size = mida_org - cnt;
+            M._size = mida_org - cnt;
     
             M.iteminf.next = segundo;
             segundo->prev = &M.iteminf;
-            M._size = cnt;
+            _size = cnt;
     
             while(segundo->next != &itemsup) {
                 segundo = segundo->next;
