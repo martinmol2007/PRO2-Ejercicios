@@ -1,0 +1,61 @@
+Determinar si un arbre binari és simètric
+
+Un arbre d'elements de tipus T és simètric (mirall de si mateix) si:
+és buit; o bé el seu fill esquerre és la imatge especular del seu fill
+dret.
+
+Dos arbres són imatge especular l'un de l'altre quan tots dos són buits,
+o bé tenen la mateixa arrel i, a més, el fill esquerre del primer és
+imatge especular del fill dret del segon i el fill dret del primer és
+imatge especular del fill esquerre del segon.
+
+Implementa un mètode públic de la classe Arbre<T> que determini si
+un arbre és simètric. La declaració és la següent:
+
+    /**
+     * @brief Determina si un arbre és simètric (mirall de si mateix).
+     *
+     * Un arbre és simètric si és buit, o bé el seu fill esquerre és la
+     * imatge especular del seu fill dret. Dos arbres són imatge
+     * especular quan tots dos són buits, o bé tenen la mateixa arrel i,
+     * a més, el fill esquerre del primer és imatge especular del fill
+     * dret del segon i el fill dret del primer és imatge especular del
+     * fill esquerre del segon.
+     *
+     * @returns `true` si l'arbre és simètric, `false` altrament.
+     */
+    bool is_symmetric() const;
+
+Observació
+
+Per poder avaluar l'ús de punters, no feu servir altres mètodes, ni
+públics ni privats, de la classe per resoldre el problema, accediu
+sempre als membres privats directament.
+
+Els fitxers públics (icona del gatet) contenen:
+
+  ----------- ------------------------------------------------------
+  Arbre.hh  la classe Arbre<T>
+  main.cc   el programa principal (gestiona l'entrada i sortida)
+  Makefile  per compilar amb make al terminal
+  .vscode   per compilar i debuggar amb F5
+  ----------- ------------------------------------------------------
+
+Per entregar només cal enviar el fitxer Arbre.hh modificat.
+
+Entrada
+
+De l'entrada se n'encarrega ja el programa principal. L'entrada està
+formada per diferents casos seguits. Cada arbre d'entrada és una línia de
+números o #s en preordre (un # indica un arbre buit).
+
+Sortida
+
+De la sortida també se n'encarrega el programa principal. La sortida
+mostra si quan l'arbre és simètric o no altrament, cada resultat en
+una línia separada.
+
+Informació del problema
+
+Exercici de pràctica generat amb el format dels problemes de PRO2
+(Jutge.org). No és un problema oficial del Jutge.

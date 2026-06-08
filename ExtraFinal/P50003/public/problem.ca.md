@@ -1,0 +1,54 @@
+# Invertir una llista
+
+Afegeix un **mètode públic** a la classe `List<T>` que inverteixi l'ordre
+dels elements de la llista. El mètode **no ha de crear ni esborrar cap
+node**: només ha de reenllaçar els nodes que ja existeixen, manipulant
+directament els punters.
+
+La capçalera és la següent:
+
+    /**
+     * @brief Inverteix l'ordre dels elements de la llista. No es crea
+     *        ni s'esborra cap node: només es reenllacen els nodes
+     *        existents (cal manipular els punters directament).
+     *
+     * @post  El p.i. conté els mateixos elements que (p.i.) inicialment
+     *        però en ordre invers. Si la llista era buida, no canvia.
+     */
+    void reverse();
+
+## Observació
+
+Per poder avaluar l'ús de punters, *no feu servir altres mètodes, ni
+públics ni privats,* de la classe per resoldre el problema, accediu
+sempre als membres privats directament.
+
+Els fitxers públics (icona del gatet) contenen:
+
+  ---------- ------------------------------------------------------
+  `list.hh`  la classe `List<T>`
+  `main.cc`  el programa principal (gestiona l'entrada i sortida)
+  `Makefile` per compilar amb `make` al terminal
+  `.vscode`  per compilar i debuggar amb F5
+  ---------- ------------------------------------------------------
+
+Per entregar només cal **enviar el fitxer `list.hh` modificat.**
+
+## Entrada
+
+*De l'entrada se n'encarrega ja el programa principal.* L'entrada està
+formada per diferents casos seguits. Cada cas és una línia amb una llista
+en el format `{e1, e2, ..., eN}` (on l'element de més a l'esquerra és el
+`front` i el de més a la dreta el `back`).
+
+## Sortida
+
+*De la sortida també se n'encarrega el programa principal.* La sortida
+mostra, per a cada cas, la llista un cop invertida amb el mètode
+`reverse`. Els resultats dels diferents casos se separen amb una línia
+buida.
+
+## Informació del problema
+
+Exercici de pràctica generat amb el format dels problemes de PRO2
+(Jutge.org). No és un problema oficial del Jutge.
