@@ -202,34 +202,50 @@ class Arbre {
      * @returns `true` si l'arbre està ordenat, `false` altrament.
      */
     bool ordered() const {
-
-        return ordered_aux(primer_node, nullptr);
+        int max;
+        return ordered_aux(primer_node, max);
     }
  private:
-    static bool ordered_aux(node_arbre* n, node_arbre* max) {
-        if(n == nullptr) return true;
-        if(n->segE == nullptr && n->segD == nullptr) {
-            max = n;
+    // PRE: cierto
+    // POST: si esta ordenado, max sera el valor maximo de n
+    static bool ordered_aux(node_arbre* n, int& max) {
+        if(n == nullptr) {
+            max = -1e9;
+            return true;
+        }
+        else if(n->segE == nullptr && n->segD == nullptr) {
+            max = n->info;
             return true;
         }
         else {
-            if(n->segE != nullptr && n->segD != nullptr) {
-                if(n->info < n->segE->info && n->info < n->segD->info && n->segD->info > n->segE->info)
-                return ordered_aux(n->segE) && ordered_aux(n->segD);
-            }
-            else if(n->segE == nullptr) {
-                if(n->info < n->segD->info) {
-                    return ordered_aux(n->segD);
+            // Comprobamos si la raiz es menor que sus hijos
+            if(n->segE != nullptr && n->info >= n->segE->info) return false;
+            if(n->segD != nullptr && n->info >= n->segD->info) return false;
+            
+            int maxE = -1e9; // Para el maximo valor por la izqeurda
+            int maxD = -1e9; // Para el maximo valor por la derecha
+
+            bool e = ordered_aux(n->segE, maxE);
+            bool d = ordered_aux(n->segD, maxD);
+
+            if(e && d) {
+                if(n->segE != nullptr && n->segD != nullptr) {
+                    if(maxE < n->segD->info) {
+                        max = maxD;
+                        return true;
+                    } 
                 }
-            }
-            else if(n->segD == nullptr) {
-                if (n->info < n->segE->info) {
-                    return ordered_aux(n->segE);
+                else if(n->segE != nullptr) {
+                    max = maxE;
+                    return true;
                 }
-            }
-            else return false;
+                else {
+                    max = maxD;
+                    return true;
+                }
+            }   
+            return false;         
         }
-        return false;
     }
     //////////////////////////////////////////////////////////////////////////////
 };
