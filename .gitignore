@@ -1,4 +1,5 @@
 # IGNORIAR 
 *.o
 *.exe
+*.txt
 CLAUDE.md
