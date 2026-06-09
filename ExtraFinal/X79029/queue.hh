@@ -127,9 +127,45 @@ public:
   //          [a1,...,an,b1,...,bk] és el contingut del paràmetre implícit.
   //          [b{k+1},...,bm] és el contingut de q.
   // Descomenteu les següents dues linies i implementeu el mètode:
-  // void take(Queue<T> &q, int k) {
-  // ...
-  // }
+  void take(Queue<T> &q, int k) {
+    // Por si nos dicen de llevar 0 o un numero negativo
+    if(k == 0) return;
+    if(q._size == 0) return;
+    if(q.first == nullptr) return;
+
+    // Nos tenemos que llevar todos
+    if(k >= q._size) {
+      if (first == nullptr) first = q.first;
+      else last->next = q.first;
+      last = q.last;
+
+      _size += q._size;
+      q._size = 0;
+
+      q.first = nullptr;
+      q.last = nullptr;
+    }
+    else {
+      int cont = 1;
+      Item* nodo = q.first;
+
+      while(cont != k) {
+        nodo = nodo->next;
+        cont++;
+      }
+      Item* aux = nodo;
+
+      if (first == nullptr) first = q.first;
+      else last->next = q.first;
+      q.first = aux->next;
+
+      last = nodo;
+      nodo->next = nullptr;
+    
+      _size += k;
+      q._size -= k;
+    }
+  }
 };
 
 
